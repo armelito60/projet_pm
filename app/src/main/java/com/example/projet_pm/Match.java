@@ -10,10 +10,10 @@ public class Match {
     private URL url;
     private URL thumbmail;
     private String date;
-    private Side1 side1;
-    private Side2 side2;
-    private Competition competition;
-    private List<Videos> videos;
+    private com.example.projet_pm.side1 side1;
+    private com.example.projet_pm.side2 side2;
+    private com.example.projet_pm.competition competition;
+    private List<com.example.projet_pm.videos> videos;
 
     public String getTitle() {
         return title;
@@ -35,19 +35,19 @@ public class Match {
         return date;
     }
 
-    public Side1 getSide1() {
+    public com.example.projet_pm.side1 getSide1() {
         return side1;
     }
 
-    public Side2 getSide2() {
+    public com.example.projet_pm.side2 getSide2() {
         return side2;
     }
 
-    public Competition getCompetition() {
+    public com.example.projet_pm.competition getCompetition() {
         return competition;
     }
 
-    public List<Videos> getVideos() {
+    public List<com.example.projet_pm.videos> getVideos() {
         return videos;
     }
 }

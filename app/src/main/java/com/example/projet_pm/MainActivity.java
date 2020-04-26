@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String BASE_URL = "https://www.scorebat.com/";
+    private static final String BASE_URL = "https://www.scorebat.com";
     private RecyclerView recyclerView;
     private ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
+
         MatchAPI matchAPI = retrofit.create(MatchAPI.class);
 
         Call<Racine> call = matchAPI.getRacine();
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Racine> call, Response<Racine> response) {
                 if(response.isSuccessful() && response.body() != null) {
-                    List<Match> matchList = response.body().getFootball();
+                    List<Object> matchList = response.body().getFootball();
                     Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
                 }
                 else {

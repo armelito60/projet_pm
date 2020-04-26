@@ -1,6 +1,6 @@
 package com.example.projet_pm;
 
-public class Videos {
+public class videos {
 
     private String title;
     private String embed;
