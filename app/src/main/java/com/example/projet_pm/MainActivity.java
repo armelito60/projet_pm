@@ -9,7 +9,11 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Racine> call, Response<Racine> response) {
                 if(response.isSuccessful() && response.body() != null) {
-                    List<Object> matchList = response.body().getFootball();
+                    ArrayList<Match> match = response.body().getMatch();
                     Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
                 }
                 else {
