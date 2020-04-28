@@ -11,9 +11,9 @@ public class Match {
     private URL url;
     private URL thumbmail;
     private String date;
-    private ArrayList<side1> side1;
-    private ArrayList<side2> side2;
-    private ArrayList<competition> competition;
+    private side1 side1;
+    private side2 side2;
+    private competition competition;
     private ArrayList<videos> videos;
 
     public String getTitle() {
@@ -36,15 +36,15 @@ public class Match {
         return date;
     }
 
-    public ArrayList<side1> getSide1() {
+    public side1 getSide1() {
         return side1;
     }
 
-    public ArrayList<side2> getSide2() {
+    public side2 getSide2() {
         return side2;
     }
 
-    public ArrayList<competition> getCompetition() {
+    public competition getCompetition() {
         return competition;
     }
 

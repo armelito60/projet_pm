@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity {
 
         MatchAPI matchAPI = retrofit.create(MatchAPI.class);
 
-        Call<ArrayList<Racine>> call = matchAPI.getRacine();
-        call.enqueue(new Callback<ArrayList<Racine>>() {
+        Call<ArrayList<Match>> call = matchAPI.getMatch();
+        call.enqueue(new Callback<ArrayList<Match>>() {
             @Override
-            public void onResponse(Call<ArrayList<Racine>> call, Response<ArrayList<Racine>> response) {
+            public void onResponse(Call<ArrayList<Match>> call, Response<ArrayList<Match>> response) {
                 if(response.isSuccessful() && response.body() != null) {
-                    Match match = response.body().getMatch();
+                    ArrayList<Match> match = response.body();
                     Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Racine>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Match>> call, Throwable t) {
                 showError();
             }
         });
@@ -97,3 +97,4 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "API Error", Toast.LENGTH_SHORT).show();
     }
 }
+
