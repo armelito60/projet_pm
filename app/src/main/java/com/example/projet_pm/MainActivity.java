@@ -35,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showList();
         makeApiCall();
     }
 
-    private void showList() {
+    private void showList(ArrayList<Match> matchArrayList) {
         // cherche l'id recycler_view et instanciation avec la variable recyclerView
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         // taille fixe du recyclerView
@@ -49,14 +48,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        List<String> input = new ArrayList<>();
-        // créer une liste de 100 éléments
-        for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
-        }
-
         // on donne la liste input à la liste mAdapter
-        mAdapter = new ListAdapter(input);
+        mAdapter = new ListAdapter(matchArrayList);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -79,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Match>> call, Response<ArrayList<Match>> response) {
                 if(response.isSuccessful() && response.body() != null) {
                     ArrayList<Match> match = response.body();
-                    Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
+                    showList(match);
                 }
                 else {
                     showError();
