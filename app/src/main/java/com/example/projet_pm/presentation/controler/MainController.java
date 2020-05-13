@@ -1,15 +1,13 @@
 package com.example.projet_pm.presentation.controler;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.example.projet_pm.Constants;
-import com.example.projet_pm.data.MatchAPI;
+import com.example.projet_pm.Singletons;
 import com.example.projet_pm.presentation.modele.Match;
 import com.example.projet_pm.presentation.vue.MainActivity;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -18,8 +16,6 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
@@ -44,15 +40,7 @@ public class MainController {
     }
 
     private void makeApiCall() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-
-
-        MatchAPI matchAPI = retrofit.create(MatchAPI.class);
-
-        Call<ArrayList<Match>> call = matchAPI.getMatch();
+        Call<ArrayList<Match>> call = Singletons.getMatchAPI().getMatch();
         call.enqueue(new Callback<ArrayList<Match>>() {
             @Override
             public void onResponse(Call<ArrayList<Match>> call, Response<ArrayList<Match>> response) {

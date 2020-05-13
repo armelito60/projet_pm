@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.projet_pm.Constants;
+import com.example.projet_pm.Singletons;
 import com.example.projet_pm.data.MatchAPI;
 import com.example.projet_pm.R;
 import com.example.projet_pm.presentation.controler.MainController;
@@ -41,10 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new MainController(
                 this,
-                new GsonBuilder()
-                .setLenient()
-                .create(),
-                getSharedPreferences(Constants.KEY_MATCH_STORAGE, Context.MODE_PRIVATE)
+                Singletons.getGson(),
+                Singletons.getSharedPreferences(getApplicationContext())
         );
         controller.onStart();
 
