@@ -1,4 +1,4 @@
-package com.example.projet_pm;
+package com.example.projet_pm.presentation.vue;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projet_pm.R;
+
 import java.util.List;
+
+import com.example.projet_pm.presentation.modele.Match;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Match> values;
@@ -49,10 +53,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                      int viewType) {
         // create a new view
-        LayoutInflater inflater = LayoutInflater.from(
-                parent.getContext());
-        View v =
-                inflater.inflate(R.layout.row_layout, parent, false);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View v = inflater.inflate(R.layout.row_layout, parent, false);
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -66,6 +68,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         final Match currentMatch = values.get(position);
         holder.txtHeader.setText(currentMatch.getTitle());
         holder.txtFooter.setText("Compétition : " + currentMatch.getCompetition().getName());
+
+        holder.txtFooter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

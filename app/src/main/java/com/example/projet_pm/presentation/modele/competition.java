@@ -1,4 +1,4 @@
-package com.example.projet_pm;
+package com.example.projet_pm.presentation.modele;
 
 import java.net.URL;
 

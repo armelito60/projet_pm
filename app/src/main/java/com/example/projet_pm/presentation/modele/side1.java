@@ -1,8 +1,8 @@
-package com.example.projet_pm;
+package com.example.projet_pm.presentation.modele;
 
 import java.net.URL;
 
-public class side2 {
+public class side1 {
 
     private String name;
     private URL url;

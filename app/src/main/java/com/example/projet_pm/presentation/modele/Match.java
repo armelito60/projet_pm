@@ -1,8 +1,7 @@
-package com.example.projet_pm;
+package com.example.projet_pm.presentation.modele;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Match {
 
@@ -11,10 +10,10 @@ public class Match {
     private URL url;
     private URL thumbmail;
     private String date;
-    private side1 side1;
-    private side2 side2;
-    private competition competition;
-    private ArrayList<videos> videos;
+    private com.example.projet_pm.presentation.modele.side1 side1;
+    private com.example.projet_pm.presentation.modele.side2 side2;
+    private com.example.projet_pm.presentation.modele.competition competition;
+    private ArrayList<com.example.projet_pm.presentation.modele.videos> videos;
 
     public String getTitle() {
         return title;

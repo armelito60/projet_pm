@@ -1,4 +1,4 @@
-package com.example.projet_pm;
+package com.example.projet_pm.presentation.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,16 +9,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.projet_pm.Constants;
+import com.example.projet_pm.data.MatchAPI;
+import com.example.projet_pm.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
+import com.example.projet_pm.presentation.modele.Match;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sharedPreferences = getSharedPreferences("application_football", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(Constants.KEY_MATCH_STORAGE, Context.MODE_PRIVATE);
         gson = new GsonBuilder()
                 .setLenient()
                 .create();
