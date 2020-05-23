@@ -15,10 +15,12 @@ import com.example.projet_pm.presentation.modele.Match;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Match> values;
+    private OnItemClickListener listener;
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+
+    public interface OnItemClickListener {
+        void onItemClick(Match item);
+    }
     class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         TextView txtHeader;
@@ -44,8 +46,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<Match> myDataset) {
-        values = myDataset;
+    public ListAdapter(List<Match> myDataset, OnItemClickListener listener) {
+        this.values = myDataset;
+        this.listener = listener;
     }
 
     //Créer les cellules
@@ -60,19 +63,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return vh;
     }
 
-    //Données présentes dans la cellule
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
         final Match currentMatch = values.get(position);
         holder.txtHeader.setText(currentMatch.getTitle());
         holder.txtFooter.setText("Compétition : " + currentMatch.getCompetition().getName());
 
-        holder.txtFooter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                listener.onItemClick(currentMatch);
             }
         });
     }

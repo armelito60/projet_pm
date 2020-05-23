@@ -83,7 +83,7 @@ public class MainController {
     }
 
     public void onItemClick(Match match) {
-
+        view.navigateToDetails(match);
     }
 
     public void onButtonAClick() {
