@@ -13,6 +13,7 @@ import com.example.projet_pm.presentation.modele.Match;
 public class DetailActivity extends AppCompatActivity {
 
     private TextView txtDetail;
+    private TextView dateDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.detail_activity);
 
         txtDetail = findViewById(R.id.detail_txt);
+        dateDetail = findViewById(R.id.dateDetail);
         Intent intent = getIntent();
         String matchJson = intent.getStringExtra("matchKey");
         Match match = Singletons.getGson().fromJson(matchJson, Match.class);
@@ -29,6 +31,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void showDetail(Match match) {
         txtDetail.setText(match.getTitle());
+        dateDetail.setText(match.getDate());
     }
 
 

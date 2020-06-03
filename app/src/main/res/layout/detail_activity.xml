@@ -11,11 +11,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_text_description"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/dateDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="detail_date_match"
+        android:textColor="#3F51B5"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_txt"
+        app:layout_constraintVertical_bias="0.059" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
