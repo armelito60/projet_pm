@@ -34,4 +34,26 @@
         app:layout_constraintTop_toBottomOf="@+id/detail_txt"
         app:layout_constraintVertical_bias="0.059" />
 
+    <TextView
+        android:id="@+id/competition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateDetail"
+        app:layout_constraintVertical_bias="0.919" />
+
+    <TextView
+        android:id="@+id/scoreMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/competition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateDetail"
+        app:layout_constraintVertical_bias="0.794" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
