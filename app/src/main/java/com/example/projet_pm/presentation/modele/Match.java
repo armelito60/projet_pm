@@ -8,7 +8,7 @@ public class Match {
     private String title;
     private String embed;
     private URL url;
-    private URL thumbmail;
+    private URL thumbnail;
     private String date;
     private com.example.projet_pm.presentation.modele.side1 side1;
     private com.example.projet_pm.presentation.modele.side2 side2;
@@ -27,8 +27,8 @@ public class Match {
         return url;
     }
 
-    public URL getThumbmail() {
-        return thumbmail;
+    public URL getThumbnail() {
+        return thumbnail;
     }
 
     public String getDate() {
