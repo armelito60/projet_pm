@@ -1,4 +1,4 @@
-# projet_pm
+# Présentation
 My first Android project
 
 Ce projet consiste à afficher une liste des plus gros matches de football. Cela concerne tous les championnats du monde entier.
@@ -13,3 +13,18 @@ Le lien internet pour accéder au score final est présent ainsi que la date et 
 
 Une amélioration sera faite avec l'intégration d'un lecteur vidéo pour montrer tous les temps forts du match.
 L'intégration d'une affiche comme image est envisagée aussi.
+
+# Prérequis
+
+- Installation Android Studio
+
+# Consignes respectées
+
+- Modèle MVC
+- Singletons
+- Ecrans : 2 activités, 2 fragments
+- Affichage d'une liste dans un RecyclerView
+- Affiche du détail d'un item de la liste
+- Gitflow
+- Stockage de donnée en cache
+- Appel API Rest
